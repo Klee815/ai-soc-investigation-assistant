@@ -1,30 +1,32 @@
 # 🛡 AI SOC Investigation Assistant
 
-An interactive Security Operations Center (SOC) dashboard built with **Python**, **Streamlit**, **Pandas**, and **Plotly**. The application analyzes security logs, detects suspicious activity, maps findings to the **MITRE ATT&CK** framework, and generates downloadable incident reports.
+An interactive **Security Operations Center (SOC)** dashboard built with **Python**, **Streamlit**, **Pandas**, and **Plotly**. This application analyzes security logs, detects suspicious activity, maps findings to the **MITRE ATT&CK** framework, and generates incident reports.
 
 ---
 
-# 📌 Overview
+# 📖 Overview
 
-The AI SOC Investigation Assistant simulates a Security Operations Center (SOC) workflow by allowing analysts to upload security logs, identify suspicious activities, visualize security events, and generate investigation reports.
+The **AI SOC Investigation Assistant** simulates a real-world Security Operations Center (SOC) investigation workflow.
+
+Users can upload security logs, detect suspicious behavior, visualize security events, map attacks to MITRE ATT&CK techniques, and generate incident reports through an easy-to-use dashboard.
 
 This project demonstrates practical cybersecurity, Python programming, and data visualization skills commonly used in SOC Analyst and Blue Team roles.
 
 ---
 
-# 🚀 Features
+# ✨ Features
 
-* 📂 Upload CSV security log files
-* 🔍 Search logs by Source IP
-* 🚨 Detect SSH brute-force attacks
-* ⚡ Detect PowerShell execution
-* 📁 Detect suspicious file access
-* 📊 Interactive security dashboard
-* 🥧 Alert severity pie chart
-* 📈 Events by Source IP chart
-* 🎯 MITRE ATT&CK mapping
-* 📄 Incident report generation
-* 📥 Download investigation reports
+- 📂 Upload CSV security logs
+- 🔍 Search logs by Source IP
+- 🚨 Detect SSH brute-force attacks
+- ⚡ Detect PowerShell execution
+- 📁 Detect suspicious file access
+- 📊 Interactive security dashboard
+- 🥧 Alert Severity Pie Chart
+- 📈 Events by Source IP Chart
+- 🎯 MITRE ATT&CK Mapping
+- 📄 Generate Incident Reports
+- 📥 Download Investigation Reports
 
 ---
 
@@ -38,7 +40,7 @@ This project demonstrates practical cybersecurity, Python programming, and data 
 
 ## 📜 Security Logs
 
-### All Security Events
+### Security Log Viewer
 
 ![Security Logs](screenshots/log.png)
 
@@ -50,24 +52,24 @@ This project demonstrates practical cybersecurity, Python programming, and data 
 
 ## 🎯 MITRE ATT&CK Mapping
 
-![MITRE](screenshots/mitre.png)
+![MITRE ATT&CK](screenshots/mitre.png)
 
 ---
 
 ## 📄 Incident Reports
 
-![Reports](screenshots/reports.png)
+![Incident Reports](screenshots/reports.png)
 
 ---
 
-# 🛡 Detection Rules
+# 🚨 Detection Rules
 
 ## SSH Brute Force Detection
 
-**Detection Logic**
+**Logic**
 
-* Three or more failed SSH login attempts
-* Followed by a successful login
+- Three or more failed SSH login attempts
+- Followed by a successful login
 
 **Severity:** High
 
@@ -75,7 +77,7 @@ This project demonstrates practical cybersecurity, Python programming, and data 
 
 ## PowerShell Execution
 
-Detects PowerShell execution events.
+Detects PowerShell execution activity.
 
 **Severity:** Medium
 
@@ -83,45 +85,44 @@ Detects PowerShell execution events.
 
 ## Sensitive File Access
 
-Detects suspicious file access activity.
+Detects suspicious file access events.
 
 **Severity:** Low
 
 ---
 
-# 📊 Dashboard
+# 📊 Dashboard Overview
 
 The dashboard provides:
 
-* High / Medium / Low alert counts
-* Total security events
-* Unique source IP addresses
-* Alert severity distribution
-* Events by Source IP visualization
-* Security log viewer
-* MITRE ATT&CK mapping
-* Downloadable incident reports
+- High, Medium, and Low severity alert counts
+- Total security events
+- Unique Source IP addresses
+- Interactive visualizations
+- Security log viewer
+- MITRE ATT&CK mapping
+- Downloadable incident reports
 
 ---
 
 # 🎯 MITRE ATT&CK Techniques
 
-| Detection             | Technique                      |
-| --------------------- | ------------------------------ |
-| SSH Brute Force       | T1110 – Brute Force            |
-| PowerShell Execution  | T1059.001 – PowerShell         |
+| Detection | MITRE Technique |
+|------------|-----------------|
+| SSH Brute Force | T1110 – Brute Force |
+| PowerShell Execution | T1059.001 – PowerShell |
 | Sensitive File Access | T1005 – Data from Local System |
 
 ---
 
 # 🛠 Technologies
 
-* Python
-* Streamlit
-* Pandas
-* Plotly
-* Git
-* GitHub
+- Python
+- Streamlit
+- Pandas
+- Plotly
+- Git
+- GitHub
 
 ---
 
@@ -150,32 +151,31 @@ ai-soc-investigation-assistant/
     ├── parser.py
     ├── mitre_mapper.py
     ├── report_generator.py
-    └── models.py
 ```
 
 ---
 
 # ⚙ Installation
 
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/Klee815/ai-soc-investigation-assistant.git
 ```
 
-Move into the project folder:
+Go to the project folder
 
 ```bash
 cd ai-soc-investigation-assistant
 ```
 
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the application:
+Run the application
 
 ```bash
 streamlit run app.py
@@ -183,49 +183,38 @@ streamlit run app.py
 
 ---
 
-# 📄 Sample Security Events
-
-The included sample dataset demonstrates:
-
-* SSH Login Failed
-* SSH Login Success
-* PowerShell Execution
-* File Access
-
----
-
 # 💼 Skills Demonstrated
 
-* Python Programming
-* Cybersecurity Log Analysis
-* Threat Detection
-* MITRE ATT&CK Framework
-* Incident Response
-* Data Visualization
-* Streamlit Development
-* Git & GitHub
-* Security Reporting
+- Python Programming
+- Security Log Analysis
+- Threat Detection
+- MITRE ATT&CK Framework
+- Incident Response
+- Data Visualization
+- Streamlit Development
+- Git & GitHub
+- Security Reporting
 
 ---
 
 # 🚀 Future Improvements
 
-* 🤖 AI Investigation Assistant
-* 📄 PDF Report Export
-* 🌐 Threat Intelligence Integration
-* 📊 Timeline Visualization
-* 🐳 Docker Deployment
-* ☁️ Streamlit Community Cloud Deployment
+- AI-powered Investigation Summary
+- PDF Report Export
+- Threat Intelligence Integration
+- Timeline Visualization
+- Docker Deployment
+- Streamlit Cloud Deployment
 
 ---
 
-# 👤 Author
+# 👨‍💻 Author
 
 **Kayoung Lee**
 
 Bachelor of Science in Cybersecurity and Information Assurance (WGU)
 
-Aspiring SOC Analyst passionate about Threat Detection, Incident Response, SIEM, Blue Team operations, and Security Automation.
+Aspiring SOC Analyst interested in Threat Detection, Incident Response, SIEM, Blue Team Operations, and Security Automation.
 
 ---
 
