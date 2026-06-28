@@ -142,6 +142,64 @@ if uploaded_file:
         c5.metric("🌍 Source IPs", logs["ip"].nunique())
 
         st.divider()
+
+        st.subheader("🚨 Active Security Alerts")
+
+        if detections:
+
+            alert_df = pd.DataFrame(detections)
+
+            st.dataframe(
+                alert_df,
+                use_container_width=True,
+                hide_index=True,
+           )
+        st.divider()
+
+        st.subheader("🔎 Indicators of Compromise (IOCs)")
+        st.divider()
+
+        st.subheader("📈 Attack Statistics")
+
+        stats = {
+            "Total Events": len(logs),
+            "Unique Source IPs": logs["ip"].nunique(),
+            "Detected Alerts": len(detections),
+            "High Severity": high,
+            "Medium Severity": medium,
+            "Low Severity": low,
+        }
+
+        stats_df = pd.DataFrame(
+            stats.items(),
+            columns=["Metric", "Value"]
+        )
+
+        st.dataframe(
+            stats_df,
+            use_container_width=True,
+            hide_index=True,
+        )
+
+        col1, col2 = st.columns(2)
+
+        with col1:
+
+            st.markdown("### 🌍 Source IP Addresses")
+
+            for ip in logs["ip"].unique():
+                st.write(f"• {ip}")
+
+        with col2:
+
+            st.markdown("### 🚨 Attack Types")
+
+            for detection in detections:
+                st.write(f"• {detection['attack']}")
+
+            else:
+
+             st.success("No active alerts.")
         st.subheader("🚨 Threat Summary")
 
         if detections:
@@ -175,75 +233,19 @@ if uploaded_file:
             logs,
             use_container_width=True
         )
+        st.download_button(
+            label="📥 Download Logs (CSV)",
+            data=logs.to_csv(index=False),
+            file_name="security_logs.csv",
+            mime="text/csv",
+        )
     # ----------------------------------------
     # Charts
     # ----------------------------------------
 
     with tab1:
-
-        left, right = st.columns(2)
-
-        with left:
-
-            st.subheader("Alert Severity")
-
-            if detections:
-
-                severity_df = (
-                    pd.DataFrame(detections)["severity"]
-                    .value_counts()
-                    .reset_index()
-                )
-
-                severity_df.columns = [
-                    "Severity",
-                    "Count"
-                ]
-
-                fig = px.pie(
-                    severity_df,
-                    values="Count",
-                    names="Severity",
-                    title="Alert Severity"
-                )
-
-                st.plotly_chart(
-                    fig,
-                    use_container_width=True
-                )
-
-        with right:
-
-            st.subheader("Events by Source IP")
-
-            ip_df = (
-                logs["ip"]
-                .value_counts()
-                .reset_index()
-            )
-
-            ip_df.columns = [
-                "IP Address",
-                "Events"
-            ]
-
-            fig2 = px.bar(
-                ip_df,
-                x="IP Address",
-                y="Events",
-                title="Events by Source IP"
-            )
-
-            st.plotly_chart(
-                fig2,
-                use_container_width=True
-            )
-    # ----------------------------------------
-    # Charts
-    # ----------------------------------------
-
-    with tab1:
-
+cd C:\Users\Kay\Documents\ai-soc-investigation-assistant
+streamlit run app.py
         st.divider()
 
         left, right = st.columns(2)
