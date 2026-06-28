@@ -34,17 +34,21 @@ This project demonstrates practical cybersecurity, Python programming, and data 
 
 ## 🖥 Dashboard
 
+Overview of detected security events, alert counts, and visualizations.
+
 ![Dashboard](screenshots/dashboard.png)
 
 ---
 
 ## 📜 Security Logs
 
-### Security Log Viewer
+View uploaded log events and investigate activity.
 
-![Security Logs](screenshots/log.png)
+![Security Logs](screenshots/logs.png)
 
-### Search / Filter Example
+### Search & Filtering
+
+Search logs by source IP and filter alerts by severity.
 
 ![Filtered Logs](screenshots/logs2.png)
 
@@ -52,11 +56,15 @@ This project demonstrates practical cybersecurity, Python programming, and data 
 
 ## 🎯 MITRE ATT&CK Mapping
 
-![MITRE ATT&CK](screenshots/mitre.png)
+Automatically maps detections to MITRE ATT&CK techniques.
+
+![MITRE ATT&CK Mapping](screenshots/mitre.png)
 
 ---
 
 ## 📄 Incident Reports
+
+Generate and download structured incident reports for detected threats.
 
 ![Incident Reports](screenshots/reports.png)
 
